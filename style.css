@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 🌅 Animated Background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to top, #ff5e62, #ff9966, #1a1a1a);
+    animation: moveSky 10s linear infinite;
+    z-index: -2;
+}
+
+@keyframes moveSky {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-50px); }
+    100% { transform: translateY(0); }
+}
+
+/* 🌞 Sun */
+.sun {
+    position: absolute;
+    bottom: 80px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #ffd700, #ff5e62);
+    border-radius: 50%;
+    animation: sunset 8s ease-in-out infinite;
+    box-shadow: 0 0 50px #ff9966;
+}
+
+@keyframes sunset {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(40px); }
+    100% { transform: translateY(0); }
+}
+
+/* Poster Container */
+.poster {
+    width: 350px;
+    height: 550px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 20px;
+}
+
+/* ✨ Glowing Text */
+h1 {
+    margin-top: 80px;
+    font-size: 32px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 
+        0 0 10px #ff9966,
+        0 0 20px #ff5e62,
+        0 0 40px #ff5e62;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 
+            0 0 10px #ff9966,
+            0 0 20px #ff5e62;
+    }
+    to {
+        text-shadow: 
+            0 0 20px #ffd700,
+            0 0 40px #ff5e62,
+            0 0 60px #ff9966;
+    }
+}
+
+p {
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Button */
+.button {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 25px;
+    background: #ff5e62;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ff9966;
+    box-shadow: 0 0 15px #ff9966;
+}
+
+.footer {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    font-size: 12px;
+    opacity: 0.7;
+}
